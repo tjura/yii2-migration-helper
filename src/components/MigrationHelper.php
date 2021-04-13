@@ -1,6 +1,6 @@
 <?php
 
-namespace tjura\components;
+namespace Yii2MigrationHelper\components;
 
 /**
  * Class MigrationHelper
