@@ -47,7 +47,7 @@ switch ($selectedOperation) {
 
         while ("" !== $fieldName) {
             $fieldName = readline("field name: ");
-            if ($field = \Yii2MigrationHelper\components\newField($fieldName)) {
+            if ($field = newField($fieldName)) {
                 $fields[] = "$field";
             }
         }
