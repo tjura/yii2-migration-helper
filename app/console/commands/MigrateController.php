@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace tjura\yii2MigrationHelper\console\controllers;
+namespace console\controllers;
 
 
 class MigrateController
