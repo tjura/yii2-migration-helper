@@ -1,6 +1,6 @@
 <?php
 
-namespace tjura\components\controllers;
+namespace tjura\components;
 
 /**
  * Class MigrationHelper
