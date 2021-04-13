@@ -1,6 +1,6 @@
 {
     "name": "tjura/yii2-migration-helper",
-    "description": "",
+    "description": "Simple interactive migration helper for Yii2 framework",
     "type": "composer-plugin",
     "license": "GNU General Public License v3.0",
     "authors": [
