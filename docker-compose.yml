@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  php-fpm:
+    build: 'docker/php'
+    restart: 'no'
+    user: ${CURRENT_UID}
+    volumes:
+      - ./app:/app/:rw,delegated
+      - /.composer/auth.json:/.composer/auth.json
+  mysql:
+    build: 'docker/mysql'
+    restart: 'no'
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_DATABASE=example
+      - MYSQL_USER=dev
+      - MYSQL_PASSWORD=secret
+      - MYSQL_ROOT_HOST=%

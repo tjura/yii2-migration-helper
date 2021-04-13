@@ -1,0 +1,26 @@
+{
+    "name": "tjura/yii2-migration-helper",
+    "description": "",
+    "type": "composer-plugin",
+    "license": "GNU General Public License v3.0",
+    "authors": [
+        {
+            "name": "Tomasz Jura",
+            "email": "jura.tomasz@gmail.com",
+            "homepage": "https://github.com/tjura",
+            "role": "Creator"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "~7.0",
+        "yiisoft/yii2": "~2.0"
+    },
+    "extra": {
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        }
+    }
+}
