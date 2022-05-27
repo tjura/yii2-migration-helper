@@ -5,7 +5,7 @@
  * @todo change this to yii2 console command
  */
 
-namespace Yii2MigrationHelper;
+namespace tjura\helpers\migrations;
 
 use function implode;
 use function in_array;
