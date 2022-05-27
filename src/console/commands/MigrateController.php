@@ -1,6 +1,6 @@
 <?php
 
-namespace Yii2MigrationHelper\console\controllers;
+namespace tjura\helpers\migrations\console\commands;
 
 /**
  * Class MigrateController
