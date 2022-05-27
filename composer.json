@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Yii2MigrationHelper\\": "src/"
+            "tjura\\helpers\\migrations\\": "src/"
         }
     },
     "extra": {
