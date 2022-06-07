@@ -36,7 +36,9 @@ php ./vendor/tjura/yii2-migration-helper/src/runner.php
 
 ### Standalone tests
 
+```bash
 docker run --rm -v $(pwd):/app -w /app -it php:cli php src/runner.php
+```
 
 ### What's next in version 1.x
 
