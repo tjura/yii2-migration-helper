@@ -1,6 +1,6 @@
 {
     "name": "tjura/yii2-migration-helper",
-    "description": "Simple interactive migration helper for Yii2 framework",
+    "description": "Simple interactive CLI migration helper for Yii2 framework",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -15,7 +15,8 @@
     "prefer-stable": true,
     "require": {
         "php": ">=7.2",
-        "yiisoft/yii2": "~2.0"
+        "yiisoft/yii2": "~2.0",
+        "ext-readline": "*"
     },
     "autoload": {
         "psr-4": {

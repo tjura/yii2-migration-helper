@@ -1,8 +1,9 @@
 <?php
 
 /**
- * OLD CODE
- * @todo change this to yii2 console command
+ * This is first script some kind of proof of concept. Its work but will be changed in future
+ * In version 1.x this command should be available directly on Yii console commands.
+ * @deprecated Will be moved to Yii console commands
  */
 
 namespace tjura\helpers\migrations;
