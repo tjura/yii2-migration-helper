@@ -20,7 +20,7 @@ yii migrate/create create_post_table --fields="title:string,body:text,author_id:
 ### Usage
 
 ```bash
-php ./vendor/tjura/yii2-migration-helper/src/runner.php
+php ./vendor/tjura/yii2-migration-helper/runner.php
 ```
 
 ### Available options

@@ -6,7 +6,7 @@
  * @deprecated Will be moved to Yii console commands
  */
 
-namespace tjura\helpers\migrations;
+namespace tjura\migration;
 
 use function implode;
 use function in_array;
