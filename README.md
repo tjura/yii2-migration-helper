@@ -1,4 +1,4 @@
-## Yii 2 - Migration helper
+## Yii 2 - Migration generator
 
 <p style="text-align:center;">
  <a title="PHP Versions Supported"><img alt="PHP Versions Supported" src="https://img.shields.io/badge/php->=7.2-777bb3.svg?logo=php&logoColor=white&labelColor=555555&style=for-the-badge"></a>  
@@ -7,11 +7,11 @@
 
 ### Description && How its works
 
-Is just simple interactive PHP CLI script that creating migrations commands according to Yii2 documentation.
-Options 1, 2 and 4 supports creating foreignKey
+This is an interactive Yii migrate command expansion. It will help you to create basic migrations.
+This extension basically creating commands according Yii documentation
 https://www.yiiframework.com/doc/guide/2.0/en/db-migrations
 
-Example script output:
+Example output:
 
 ```bash
 yii migrate/create create_post_table --fields="title:string,body:text,author_id:integer:notNull:foreignKey(user)"
@@ -20,27 +20,36 @@ yii migrate/create create_post_table --fields="title:string,body:text,author_id:
 ### Usage
 
 ```bash
-php ./vendor/tjura/yii2-migration-helper/runner.php
+php yii migrate
 ```
 
 ### Available options
 
 1. Create table
-2. Add column
-3. Drop Column
-4. Add Junction Table
-5. Redo last
-6. Down last
-7. Up
-8. BLANK
+2. Drop table
+3. Add column
+4. Drop Column
+5. Add Junction Table
+6. Redo last
+7. Down last
+8. Create empty migration
+9. Up
 
-### Standalone tests
+### Installation instructions
 
-```bash
-docker run --rm -v $(pwd):/app -w /app -it php:cli php src/runner.php
+```php
+composer install tjura/migration-helper --dev
 ```
 
-### What's next in version 1.x
+Update your console.php config file
+```php
+'controllerMap' => [
+        'migrate' => [
+            'class' => \tjura\migration\commands\MigrateController::class,
+        ]
+]
+```
 
-Currently, this is first script - some kind of proof of concept. Its work but will be changed in future
-In version 1.x I want to move this script into Yii console commands.
+### What's next in version before release 1.0
+
+- Improve code quality and write tests

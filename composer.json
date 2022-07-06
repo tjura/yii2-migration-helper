@@ -1,34 +1,40 @@
 {
-    "name": "tjura/yii2-migration-helper",
-    "description": "Migration generator for Yii2",
-    "keywords": ["migration"],
-    "type": "yii2-extension",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Tomasz Jura",
-            "email": "jura.tomasz@gmail.com",
-            "homepage": "https://github.com/tjura",
-            "role": "Creator"
-        }
-    ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "require": {
-        "php": ">=8.1",
-        "yiisoft/yii2": "^2.0",
-        "ext-readline": "*"
-    },
-    "autoload": {
-        "psr-4": {
-            "tjura\\migration\\": ""
-        }
-    },
-    "extra": {
-        "bootstrap": "tjura\\migration\\Bootstrap",
-        "asset-installer-paths": {
-            "npm-asset-library": "vendor/npm",
-            "bower-asset-library": "vendor/bower"
-        }
+  "name": "tjura/yii2-migration-helper",
+  "description": "Interactive migration generator for Yii2",
+  "keywords": [
+    "migration"
+  ],
+  "type": "yii2-extension",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Tomasz Jura",
+      "email": "jura.tomasz@gmail.com",
+      "homepage": "https://github.com/tjura",
+      "role": "Creator"
     }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": ">=8.1",
+    "yiisoft/yii2": ">=2.0.8",
+    "ext-readline": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "tjura\\migration\\": ""
+    }
+  },
+  "extra": {
+    "asset-installer-paths": {
+      "npm-asset-library": "vendor/npm",
+      "bower-asset-library": "vendor/bower"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true
+    }
+  }
 }
