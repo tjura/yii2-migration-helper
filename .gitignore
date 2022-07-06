@@ -18,6 +18,9 @@ Thumbs.db
 # composer itself is not needed
 composer.phar
 
+# If the vendor directory isn't being commited the composer.lock file should also be ignored
+composer.lock
+
 # Mac DS_Store Files
 .DS_Store
 
@@ -28,17 +31,3 @@ phpunit.phar
 
 # vagrant runtime
 /.vagrant
-
-tests/_output/*
-
-/stats
-/nodejs/node_modules
-/maintenance
-/env.php
-/common/config/google/api-iod/google-api-credentials.json
-/common/config/google/api/google-api-credentials.json
-/tools/config.php
-.vscode/
-node_modules/
-qBacklog.txt
-frontend/runtime/
