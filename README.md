@@ -38,7 +38,7 @@ php yii migrate
 ### Installation instructions
 
 ```php
-composer install tjura/migration-helper --dev
+composer require tjura/yii2-migration-helper:dev-develop --dev
 ```
 
 Update your console.php config file
