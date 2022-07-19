@@ -7,7 +7,8 @@
 
 ### Description && How its works
 
-This is an interactive Yii migrate command expansion. It will help you to create basic migrations.
+This is an interactive Yii migrate command expansion. It will help you to create basic migrations using question in
+command line.
 This extension basically creating commands according Yii documentation
 https://www.yiiframework.com/doc/guide/2.0/en/db-migrations
 
@@ -38,10 +39,11 @@ php yii migrate
 ### Installation instructions
 
 ```php
-composer require tjura/yii2-migration-helper:dev-develop --dev
+composer require tjura/yii2-migration-helper
 ```
 
 Update your console.php config file
+
 ```php
 'controllerMap' => [
         'migrate' => [
@@ -50,6 +52,12 @@ Update your console.php config file
 ]
 ```
 
-### What's next in version before release 1.0
+### What's next
 
-- Improve code quality and write tests
+- Improve code quality and write unit tests
+- Release improved version for older php 7.x
+
+### Dev notes
+
+- This project was created for help me understand how to create good quality opensource extension and also to improve
+  everyday tasks when I'm working on Yii2 projects. Thank you for your understanding and help

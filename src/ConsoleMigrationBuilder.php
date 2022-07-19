@@ -2,18 +2,18 @@
 
 namespace tjura\migration\src;
 
+use tjura\migration\enums\MigrationEnum;
+use tjura\migration\traits\QuestionHelperTrait;
 use yii\helpers\Console;
 
 use function array_merge;
-use function array_pop;
 use function implode;
 use function in_array;
 use function sprintf;
-use function str_replace;
 
 class ConsoleMigrationBuilder
 {
-    protected const FK_SUFFIX = '_id';
+    use QuestionHelperTrait;
 
     public function buildCreateTableCommand(string $tableName): string
     {
@@ -43,16 +43,11 @@ class ConsoleMigrationBuilder
     protected function detectPossibleFk(string $columnName): bool
     {
         $lastThreeCharacters = substr($columnName, -3);
-        if (self::FK_SUFFIX === $lastThreeCharacters) {
+        if (MigrationEnum::FK_SUFFIX->value === $lastThreeCharacters) {
             return true;
         }
 
         return false;
-    }
-
-    protected function getTableNameFromFk(string $columnName): string
-    {
-        return str_replace(self::FK_SUFFIX, '', $columnName);
     }
 
     protected function createForeignKey(?string $tableName): string
@@ -64,48 +59,11 @@ class ConsoleMigrationBuilder
         return sprintf('foreignKey(%s)', $tableName);
     }
 
-    protected function askAboutForeignKey(string $columnName): string
-    {
-        $fkTable = $this->getTableNameFromFk(columnName: $columnName);
-        $askResult = Console::select(prompt: 'Do you want create FK with ' . $fkTable . ' table?', options: [
-            'Y' => 'Yes',
-            'N' => 'No',
-            'C' => 'Customize table name',
-        ]);
-
-        return match ($askResult) {
-            'Y' => $this->createForeignKey(tableName: $fkTable),
-            'N' => '',
-            'C' => $this->createForeignKey(tableName: null),
-        };
-    }
-
-    protected function showSelectedTypes(array $types): void
-    {
-        if ($types) {
-            Console::stdout('Current types:');
-            Console::output(implode(',', $types));
-        }
-    }
-
-    public function askAboutTypes(array &$types): void
-    {
-        Console::output();
-        Console::output('Help: integer,string,boolean,defaultValue(1),notNull');
-        Console::output('Live blank to finish or type "undo" to remove last');
-        Console::output();
-        $this->showSelectedTypes(types: $types);
-
-        while ($type = Console::prompt(text: 'Type:')) {
-            if ('undo' === $type) {
-                array_pop($types);
-            } else {
-                $types[] = $type;
-            }
-            $this->showSelectedTypes(types: $types);
-        }
-    }
-
+    /**
+     * @param string $columnName
+     * @return string
+     * @todo encapsulate console question to proper class, builder should focus only on building migrate query
+     */
     public function createColumn(string $columnName): string
     {
         $fk = null;

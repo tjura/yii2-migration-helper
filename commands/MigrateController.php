@@ -2,8 +2,9 @@
 
 namespace tjura\migration\commands;
 
-use tjura\migration\src\enums\AvailableCommandsEnum;
+use tjura\migration\enums\AvailableCommandsEnum;
 use tjura\migration\src\ConsoleMigrationBuilder;
+use tjura\migration\traits\QuestionHelperTrait;
 use yii\console\controllers\MigrateController as BaseMigrateController;
 use yii\console\Exception;
 use yii\console\ExitCode;
@@ -16,6 +17,7 @@ use function implode;
  */
 class MigrateController extends BaseMigrateController
 {
+    use QuestionHelperTrait;
 
     public $defaultAction = 'menu';
 
@@ -29,6 +31,7 @@ class MigrateController extends BaseMigrateController
 
     /**
      * Interactive menu
+     * @throws Exception
      */
     public function actionMenu(): int
     {
@@ -69,8 +72,7 @@ class MigrateController extends BaseMigrateController
     public function actionAddJunctionTable(): int
     {
         $tableName = $this->askAboutTableName();
-        Console::stdout(string: 'SECOND ');
-        $secondTableName = $this->askAboutTableName();
+        $secondTableName = $this->askAboutTableName(question: 'SECOND TABLE NAME:');
         $command = $this->generator->buildAddJunctionTableCommand(
             tableName: $tableName,
             secondTableName: $secondTableName
@@ -166,20 +168,4 @@ class MigrateController extends BaseMigrateController
 
         return $this->actionUp();
     }
-
-    protected function askAboutColumnName(): string
-    {
-        return $this->ask(question: 'COLUMN NAME:');
-    }
-
-    protected function askAboutTableName(): string
-    {
-        return $this->ask(question: 'TABLE NAME:');
-    }
-
-    protected function ask(string $question, bool $required = true): string
-    {
-        return Console::prompt(text: $question, options: ['required' => $required]);
-    }
-
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace tjura\migration\src\enums;
+namespace tjura\migration\enums;
 
 enum AvailableCommandsEnum: string
 {
