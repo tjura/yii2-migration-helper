@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 - Changelog
+- Manual tests and standalone run option
 
 ### Changed
 
