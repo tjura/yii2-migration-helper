@@ -2,6 +2,9 @@
 
 namespace tjura\migration\enums;
 
+/**
+ * @author Tomasz Jura <jura.tomasz@gmail.com>
+ */
 enum AvailableCommandsEnum: string
 {
     case CREATE_TABLE = '1';

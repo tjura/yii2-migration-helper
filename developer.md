@@ -7,7 +7,7 @@
 
 ### Install vendors
 
-```bash
+```shell
 docker run --rm -v $(pwd):/app -w /app -it composer composer install
 ```
 
@@ -15,8 +15,15 @@ docker run --rm -v $(pwd):/app -w /app -it composer composer install
 
 <img src="https://wac-cdn.atlassian.com/dam/jcr:cc0b526e-adb7-4d45-874e-9bcea9898b4a/04%20Hotfix%20branches.svg?cdnVersion=442" alt="gitflow">
 
- - When release is ready should be merged into master and tagged
- - When hotfix is ready should be merged in to current develop, master and release if exist.
+- When release is ready should be merged into master and tagged
+- When hotfix is ready should be merged in to current develop, master and release if exist.
+
+### Manual testing
+
+```shell
+docker run --rm -v $(pwd):/app -w /app -it php:8.1-fpm php tests/manual/ConsoleTest.php
+```
 
 ### To do
-- Develop the way to standalone testing all features
+
+- Automatic tests
