@@ -20,3 +20,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 
 - installation instructions
+- junction table option not working
