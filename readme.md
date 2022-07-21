@@ -16,6 +16,10 @@
 - Around 5 minutes
 - Very easy
 
+## Requirements
+- PHP >= 8.1
+- Yii2 >= 2.0.8
+
 ## Description && How its works
 
 This is an interactive Yii migrate command expansion. It will help you to create basic migrations using question in
