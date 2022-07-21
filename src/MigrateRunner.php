@@ -60,6 +60,7 @@ class MigrateRunner
         $builder->buildAddJunctionTableCommand(
             secondTableName: $this->questionHelper->askAboutTableName(question: 'SECOND TABLE NAME:')
         );
+        $builder->setColumns($this->questionHelper->askAboutColumns('Do you want create additional columns?'));
 
         return $this->execute(builder: $builder);
     }

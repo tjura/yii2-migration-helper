@@ -99,7 +99,7 @@ class CommandBuilder
     public function buildAddJunctionTableCommand(string $secondTableName): self
     {
         $this->command = sprintf(
-            'create_junction_table_for_%s_column_from_%s_table',
+            'create_junction_table_for_%s_and_from_%s_tables',
             $this->tableName,
             $secondTableName
         );
