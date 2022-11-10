@@ -94,7 +94,7 @@ class QuestionHelper
 
         if (CommandBuilder::isColumnNameContainsRelation(columnName: $columnName)) {
             $fk = $this->askAboutForeignKey(columnName: $columnName);
-            $types = ['integer', 'unsigned'];
+            $types = ['integer'];
         }
 
         $this->askAboutColumnTypes(types: $types);
